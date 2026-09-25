@@ -1,0 +1,15 @@
+# Output & intermediate directories
+output/
+processed/
+scratch/
+*.tsv
+*.parquet
+*.json
+*.log
+*.zip
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

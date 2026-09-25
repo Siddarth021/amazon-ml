@@ -1,0 +1,44 @@
+# Output files (generated during pipeline execution)
+**/output/
+output/
+*.tsv
+*.parquet
+
+# Preprocessed intermediate files
+**/processed/
+processed/
+
+# Scratch & temporary scripts
+**/scratch/
+scratch/
+
+# Archives & submission zips
+*.zip
+
+# Datasets (large files)
+**/dataset/
+dataset/
+student_resource/dataset/
+
+# OS specific files
+__MACOSX/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+train.log
+
+# Python cache & environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+venv/
+.venv/
+
+# Keep PDF problem statement tracked
+!6ab5628d5a817_amazon_ml_challenge_problem_statement.pdf
