@@ -25,9 +25,11 @@ __MACOSX/
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs & large model weights
 *.log
 train.log
+*.json
+!runs/*/validation_metrics.json
 
 # Python cache & environment
 __pycache__/
