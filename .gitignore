@@ -58,3 +58,4 @@ runs/
 
 # Keep PDF problem statement tracked
 !6ab5628d5a817_amazon_ml_challenge_problem_statement.pdf
+*.tar.xz
