@@ -38,7 +38,8 @@ RAW = ["n_best", "n_token_set", "n_ratio", "n_jw", "a_token_set", "a_ratio", "nu
 CE_MISSING = -20.0
 PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=127, min_data_in_leaf=200, feature_fraction=0.8,
               bagging_fraction=0.8, bagging_freq=1, num_threads=os.cpu_count(), seed=config.SEED, verbose=-1)
-ROUNDS, EARLY = 3000, 50
+PARAMS.update(__import__("json").loads(os.environ.get("ER_CTX_PARAMS", "{}")))  # e.g. '{"learning_rate": 0.03}'
+ROUNDS, EARLY = 3000, int(os.environ.get("ER_CTX_EARLY", 50))
 
 
 # ----------------------------------------------------------------------------------------------- segment helpers
@@ -200,7 +201,7 @@ def fit(world: str, ces: list, extra: list, name: str, max_rows: int, force: boo
         path = mdir / f"h{h}.txt"
         if path.exists() and not force:
             continue
-        rng = np.random.default_rng(config.SEED + h)
+        rng = np.random.default_rng(PARAMS["seed"] + h)
         X, Y, V, VY = [], [], [], []
         with timed(log, f"{name} h{h}: load training half {1 - h}"):
             for pn in names:
