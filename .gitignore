@@ -16,7 +16,9 @@ scratch/
 *.zip
 
 # Datasets (large files)
+**/dataset
 **/dataset/
+dataset
 dataset/
 student_resource/dataset
 student_resource/dataset/
@@ -42,6 +44,17 @@ __pycache__/
 .env
 venv/
 .venv/
+
+# Model weights & large work directories
+**/work/
+work/
+**/runs/
+runs/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
 
 # Keep PDF problem statement tracked
 !6ab5628d5a817_amazon_ml_challenge_problem_statement.pdf
